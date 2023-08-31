@@ -284,12 +284,34 @@
             <div class="row align-items-center">
 
                     <div class="col">
-                        <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, emilia verne!</h1>
+                        <h1 class="fs-5 color-900 mt-1 mb-0">Welcome back, </h1>
                     </div>
 
                     <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 mt-2 mt-md-0">
                         <div class="input-group">
-                            <input class="form-control text-center" disabled="" value="Server Time: 2023-08-31 11:43">
+                            <input id="serverTime" type="text" class="form-control text-center" disabled>
+
+  <script>
+    // Wait for the DOM to be fully loaded.
+    document.addEventListener('DOMContentLoaded', function() {
+      function fetchServerTime() {
+        // Normally you would fetch this from the server.
+        const now = new Date();
+        const timeString = now.toISOString().split('T')[1].split('.')[0];
+        
+        // Update the input field with the new time.
+        document.getElementById("serverTime").value = `Server Time: ${timeString}`;
+      }
+      
+      // Fetch the time when the page loads.
+      fetchServerTime();
+
+      // Update the time every second.
+      setInterval(fetchServerTime, 1000);
+    });
+  </script>
+
+
                         </div>
                     </div>
                     

