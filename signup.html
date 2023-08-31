@@ -106,8 +106,9 @@
         </div>
 
 <div class="text-center">
-    Welcome <br class="mb-2">
-    <p style="font-size: 14px; color:#333333; font-weight: 400">Please sign-in to continue</p>
+    Welcome to invesableai.com
+ <br class="mb-2">
+    <p style="font-size: 14px; color:#333333; font-weight: 400">We're excited to have you on board. Let's get started by creating your account.</p>
 </div>
 
 
@@ -139,17 +140,37 @@
     <input type=hidden name=follow value=''>
     <input type=hidden name=follow_id value=''>
 
-    <input type="text" class="form-control mb-2" name="username" placeholder="Username" value="" size=30 required>
 
-    <input type="password" class="form-control" name="password" id="dz-password" placeholder="Password" required="">
 
-    <div class="my-2">
-        <a href="" class="op_link">Forgot Password?</a>
-    </div>
+<!-- First Name -->
+<input type="text" class="form-control mb-2" name="firstName" placeholder="First Name" value="" size=30 required>
+
+<!-- Email -->
+<input type="email" class="form-control mb-2" name="email" placeholder="Email" value="" size=30 required>
+
+<!-- Retype Email -->
+<input type="email" class="form-control mb-2" name="retypeEmail" placeholder="Retype Email" value="" size=30 required>
+
+<!-- Secret Question -->
+<input type="text" class="form-control mb-2" name="secretQuestion" placeholder="Secret Question" value="" size=30 required>
+
+<!-- Secret Answer -->
+<input type="text" class="form-control mb-2" name="secretAnswer" placeholder="Secret Answer" value="" size=30 required>
+
+<!-- Username -->
+<input type="text" class="form-control mb-2" name="username" placeholder="Username" value="" size=30 required>
+
+<!-- Password -->
+<input type="password" class="form-control mb-2" name="password" id="dz-password" placeholder="Password" required>
+
+<!-- Retype Password -->
+<input type="password" class="form-control mb-2" name="retypePassword" id="dz-retype-password" placeholder="Retype Password" required>
+
+  
 
     
 
-    <button type="submit" class="btn-main">Sign Me In</button>
+    <button type="submit" class="btn-main">Sign Up</button>
 </form>
 
 
@@ -254,7 +275,7 @@ function addNewUser(username, password) {
         <hr class="mb-0">
     </div>
 </div>
-<a class="btn-option" href="signup.html">Sign up</a>
+<a class="btn-option" href="login.html">Sign In</a>
 
 
 </div>
