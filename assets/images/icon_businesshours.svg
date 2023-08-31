@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22.05" height="22.069" viewBox="0 0 22.05 22.069">
+  <g id="basic_clock" transform="translate(0.525 0.525)">
+    <path id="Path" d="M17.924,3.079a10.5,10.5,0,1,1-14.849,0A10.514,10.514,0,0,1,17.924,3.079Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.05"/>
+    <path id="Path-2" data-name="Path" d="M0,0V6.765L2.8,9.809" transform="translate(10.5 3.503)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.05"/>
+  </g>
+</svg>

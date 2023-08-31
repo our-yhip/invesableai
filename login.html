@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>invesableai.com</title>
+    <link rel="stylesheet" href="assets/css/theme.min.css">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="invesableai.com">
+    <link rel="icon" href="assets/images/favicon.svg" sizes="32x32"/>
+    <link rel="icon" href="assets/images/favicon.svg" sizes="192x192"/>
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg"/>
+    <meta name="msapplication-TileImage" content="/assets/images/favicon.svg"/>
+    <style>body,p,span,div,label,h1,h2,h3,h4,h5,h6 {
+            font-family: "Source Serif Pro", serif !important;
+        }
+        .auth-box {
+            width: 550px;
+            max-width:100%;
+            margin: auto;
+            padding: 35px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .btn-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            min-height: 52px;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 400;
+            outline: none;
+            cursor: pointer;
+            border: 0;
+            border-radius: 3px;
+            transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+            background-color: #635dff;
+            color: #ffffff;
+        }
+
+        .btn-main:hover {
+            background-color: #4945c5;
+        }
+
+        .btn-option {
+            display: flex;
+            position: relative;
+            background: #fff;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: 16px;
+            font-family: inherit;
+            height: 52px;
+            border: 1px solid #c2c8d0;
+            border-radius: 3px;
+            color: #2d333a;
+            cursor: pointer;
+            outline: 0;
+            transition: box-shadow .15s ease-in-out, background-color .15s ease-in-out;
+            text-decoration: none !important;
+        }
+
+        .btn-option:hover {
+            background: #c2c8d0;
+            color: #2d333a;
+            text-decoration: none !important;
+        }
+
+        .op_link {
+            color: rgb(0, 123, 173) !important;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 21px;
+            margin: 10px 0;
+            text-decoration: none !important;
+        }
+        .op_link:hover {
+        }
+    </style>
+</head>
+<body style="background-color: #414259">
+<video id="047973be-2096-be7c-9d41-6c5284c943f7-video" autoplay loop
+       style="background-image:url('assets/images/home_head_a.jpg');  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;" muted playsinline data-wf-ignore="true" data-object-fit="cover">
+    <source src="assets/images/home_head.mp4" data-wf-ignore="true"/>
+    <source src="assets/images/home_head.webm" data-wf-ignore="true"/>
+</video>
+<div class="container-fluid mt-4">
+
+    <div class="auth-box" style="position: relative;z-index: 99">
+        <div class="pr-4 mb-4">
+            <a href="index.html">
+                <img src="assets/images/logo_main.svg" alt=" " class="">
+            </a>
+        </div>
+
+<div class="text-center">
+    Welcome <br class="mb-2">
+    <p style="font-size: 14px; color:#333333; font-weight: 400">Please sign-in to continue</p>
+</div>
+
+
+    <script language=javascript>
+        function checkform() {
+            if (document.mainform.username.value == '') {
+                alert("Please type your username!");
+                document.mainform.username.focus();
+                return false;
+            }
+            if (document.mainform.password.value == '') {
+                alert("Please type your password!");
+                document.mainform.password.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+
+
+<form method=post name=mainform onsubmit="return checkform()"><input type="hidden" name="form_id" value="16934814696844"><input type="hidden" name="form_token" value="e466b287eca7ace7855f83cb45a0ba39">
+    <input type=hidden name=a value='do_login'>
+    <input type=hidden name=follow value=''>
+    <input type=hidden name=follow_id value=''>
+
+    <input type="text" class="form-control mb-2" name="username" placeholder="Username" value="" size=30 required>
+
+    <input type="password" class="form-control" name="password" id="dz-password" placeholder="Password" required="">
+
+    <div class="my-2">
+        <a href="index%EF%B9%96a=forgot_password.html" class="op_link">Forgot Password?</a>
+    </div>
+
+    
+
+    <button type="submit" class="btn-main">Sign Me In</button>
+</form>
+<div class="row mb-2">
+    <div class="col-5">
+        <hr class="mb-0">
+    </div>
+    <div class="col-2 text-center" style="font-weight: 400;font-size: 14px;color:#555555; margin-top: 4px">OR</div>
+    <div class="col-5">
+        <hr class="mb-0">
+    </div>
+</div>
+<a class="btn-option" href="index%EF%B9%96a=signup.html">Sign up</a>
+
+
+</div>
+</div>
+</body>
+</html>

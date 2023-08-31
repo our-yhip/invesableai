@@ -1,0 +1,84 @@
+.flag-icon, .flag-icon-background {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat
+}
+
+.flag-icon {
+    position: relative;
+    display: inline-block;
+    width: 1.3333333333em;
+    line-height: 1em
+}
+
+.flag-icon:before {
+    content: "\a0"
+}
+
+.flag-icon.flag-icon-squared {
+    width: 1em
+}
+
+.flag-icon-gb {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/gb.svg)
+}
+
+.flag-icon-gb.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/gb.svg)
+}
+
+.flag-icon-ru {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/ru.svg)
+}
+
+.flag-icon-ru.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/ru.svg)
+}
+
+.flag-icon-cn {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/cn.svg)
+}
+
+.flag-icon-cn.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/cn.svg)
+}
+
+.flag-icon-jp {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/jp.svg)
+}
+
+.flag-icon-jp.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/jp.svg)
+}
+
+.flag-icon-kr {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/kr.svg)
+}
+
+.flag-icon-kr.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/kr.svg)
+}
+
+.flag-icon-vn {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/vn.svg)
+}
+
+.flag-icon-vn.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/vn.svg)
+}
+
+.flag-icon-pt {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/pt.svg)
+}
+
+.flag-icon-pt.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/pt.svg)
+}
+
+.flag-icon-es {
+    background-image: url(/assets_d/fonts/flag-icon/flags/4x3/es.svg)
+}
+
+.flag-icon-es.flag-icon-squared {
+    background-image: url(/assets_d/fonts/flag-icon/flags/1x1/es.svg)
+}
